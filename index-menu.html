@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বাংলাদেশ কুইজ - মেনু</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .menu-container {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 50px;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 32px;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+        
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .quiz-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .quiz-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .quiz-card h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .quiz-card p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <h1>বাংলাদেশ কুইজ</h1>
+        <p class="subtitle">আপনার পছন্দের কুইজ নির্বাচন করুন</p>
+        
+        <div class="quiz-options">
+            <a href="mcq-quiz.html" class="quiz-card">
+                <div class="icon">📝</div>
+                <h2>MCQ কুইজ</h2>
+                <p>১০টি বহুনির্বাচনী প্রশ্ন | মোট নম্বর: ১০</p>
+            </a>
+            
+            <a href="quiz.html" class="quiz-card">
+                <div class="icon">✓✗</div>
+                <h2>শুদ্ধ-অশুদ্ধ কুইজ</h2>
+                <p>৫টি সত্য/মিথ্যা প্রশ্ন | মোট নম্বর: ১০</p>
+            </a>
+            
+            <a href="fillblank-quiz.html" class="quiz-card">
+                <div class="icon">✏️</div>
+                <h2>শূন্যস্থান পূরণ কুইজ - ১</h2>
+                <p>৪টি শূন্যস্থান পূরণ প্রশ্ন | মোট নম্বর: ৮</p>
+            </a>
+            
+            <a href="fillblank2-quiz.html" class="quiz-card">
+                <div class="icon">📋</div>
+                <h2>শূন্যস্থান পূরণ কুইজ - ২</h2>
+                <p>৫টি শূন্যস্থান পূরণ প্রশ্ন | মোট নম্বর: ১০</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শূন্যস্থান পূরণ কুইজ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .marks-info {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+        
+        .question-box {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .question-text {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+        
+        .blank {
+            display: inline-block;
+            min-width: 150px;
+            padding: 5px 10px;
+            border-bottom: 2px solid #667eea;
+            margin: 0 5px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .marks {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        
+        .option-btn {
+            padding: 12px;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .option-btn:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+        
+        .option-btn.selected {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        .submit-btn:hover {
+            background: #5568d3;
+        }
+        
+        .result {
+            display: none;
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .score {
+            font-size: 48px;
+            font-weight: bold;
+            color: #667eea;
+            margin: 20px 0;
+        }
+        
+        .answer-review {
+            text-align: left;
+            margin-top: 20px;
+        }
+        
+        .review-item {
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+        
+        .correct-answer {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+        
+        .wrong-answer {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <a href="index-menu.html" style="display: inline-block; padding: 10px 20px; background: #667eea; color: white; text-decoration: none; border-radius: 8px; font-size: 16px;">← মেনুতে ফিরুন</a>
+        </div>
+        <h1>শূন্যস্থান পূরণ কুইজ</h1>
+        <div class="marks-info">মোট নম্বর: ৮ (প্রতিটি প্রশ্ন ২ নম্বর)</div>
+        
+        <form id="quizForm">
+            <div class="question-box">
+                <div class="marks">নম্বর: ২</div>
+                <div class="question-text">১. দরিদ্রতার কারণে অনেক পিতা-মাতা তাদের সন্তানদের <span class="blank">______</span> পাঠায় না।</div>
+                <div class="options">
+                    <button type="button" class="option-btn" data-question="1" data-answer="বিদ্যালয়">বিদ্যালয়</button>
+                    <button type="button" class="option-btn" data-question="1" data-answer="হাসপাতাল">হাসপাতাল</button>
+                    <button type="button" class="option-btn" data-question="1" data-answer="বাজার">বাজার</button>
+                    <button type="button" class="option-btn" data-question="1" data-answer="মাঠ">মাঠ</button>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <div class="marks">নম্বর: ২</div>
+                <div class="question-text">২. অনেক শিশু তাদের পরিবারকে কাজে সাহায্য করতে গিয়ে <span class="blank">______</span> বন্ধ করে দেয়।</div>
+                <div class="options">
+                    <button type="button" class="option-btn" data-question="2" data-answer="খেলাধুলা">খেলাধুলা</button>
+                    <button type="button" class="option-btn" data-question="2" data-answer="লেখাপড়া">লেখাপড়া</button>
+                    <button type="button" class="option-btn" data-question="2" data-answer="ঘুমানো">ঘুমানো</button>
+                    <button type="button" class="option-btn" data-question="2" data-answer="খাওয়া">খাওয়া</button>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <div class="marks">নম্বর: ২</div>
+                <div class="question-text">৩. আমাদের দেশে জনসংখ্যা তুলনায় <span class="blank">______</span> সংখ্যা কম।</div>
+                <div class="options">
+                    <button type="button" class="option-btn" data-question="3" data-answer="শিক্ষক">শিক্ষক</button>
+                    <button type="button" class="option-btn" data-question="3" data-answer="চিকিৎসক">চিকিৎসক</button>
+                    <button type="button" class="option-btn" data-question="3" data-answer="কৃষক">কৃষক</button>
+                    <button type="button" class="option-btn" data-question="3" data-answer="ব্যবসায়ী">ব্যবসায়ী</button>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <div class="marks">নম্বর: ২</div>
+                <div class="question-text">৪. স্বাস্থ্যহীনতার কারণে <span class="blank">______</span> অনেকের কর্মদক্ষতা কমে যায়।</div>
+                <div class="options">
+                    <button type="button" class="option-btn" data-question="4" data-answer="প্রতিদিন">প্রতিদিন</button>
+                    <button type="button" class="option-btn" data-question="4" data-answer="কখনো কখনো">কখনো কখনো</button>
+                    <button type="button" class="option-btn" data-question="4" data-answer="সবসময়">সবসময়</button>
+                    <button type="button" class="option-btn" data-question="4" data-answer="প্রায়ই">প্রায়ই</button>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">উত্তর জমা দিন</button>
+        </form>
+
+        <div id="result" class="result">
+            <h2>পরীক্ষার ফলাফল</h2>
+            <div class="score" id="score"></div>
+            <div class="answer-review" id="answerReview"></div>
+        </div>
+    </div>
+
+    <script>
+        const correctAnswers = {
+            1: "বিদ্যালয়",
+            2: "লেখাপড়া",
+            3: "চিকিৎসক",
+            4: "প্রায়ই"
+        };
+
+        const userAnswers = {};
+
+        document.querySelectorAll('.option-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const question = this.dataset.question;
+                const answer = this.dataset.answer;
+                
+                document.querySelectorAll(`[data-question="${question}"]`).forEach(b => {
+                    b.classList.remove('selected');
+                });
+                
+                this.classList.add('selected');
+                userAnswers[question] = answer;
+            });
+        });
+
+        document.getElementById('quizForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (Object.keys(userAnswers).length < 4) {
+                alert('সব প্রশ্নের উত্তর দিন!');
+                return;
+            }
+
+            let score = 0;
+            let reviewHtml = '';
+
+            for (let i = 1; i <= 4; i++) {
+                const isCorrect = userAnswers[i] === correctAnswers[i];
+                if (isCorrect) score += 2;
+
+                const className = isCorrect ? 'correct-answer' : 'wrong-answer';
+                const status = isCorrect ? '✓ সঠিক' : '✗ ভুল';
+
+                reviewHtml += `
+                    <div class="review-item ${className}">
+                        <strong>প্রশ্ন ${i}:</strong> ${status}<br>
+                        সঠিক উত্তর: ${correctAnswers[i]}
+                    </div>
+                `;
+            }
+
+            document.getElementById('score').textContent = `${score}/৮`;
+            document.getElementById('answerReview').innerHTML = reviewHtml;
+            document.getElementById('quizForm').style.display = 'none';
+            document.getElementById('result').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

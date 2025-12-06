@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বাংলাদেশ সাধারণ জ্ঞান কুইজ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .marks-info {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+        
+        .question-box {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .question-text {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .marks {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .options {
+            display: grid;
+            gap: 10px;
+        }
+        
+        .option-btn {
+            padding: 12px;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+            text-align: left;
+        }
+        
+        .option-btn:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+        
+        .option-btn.selected {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        .submit-btn:hover {
+            background: #5568d3;
+        }
+        
+        .result {
+            display: none;
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .score {
+            font-size: 48px;
+            font-weight: bold;
+            color: #667eea;
+            margin: 20px 0;
+        }
+        
+        .answer-review {
+            text-align: left;
+            margin-top: 20px;
+        }
+        
+        .review-item {
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+        
+        .correct-answer {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+        
+        .wrong-answer {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <a href="index-menu.html" style="display: inline-block; padding: 10px 20px; background: #667eea; color: white; text-decoration: none; border-radius: 8px; font-size: 16px;">← মেনুতে ফিরুন</a>
+        </div>
+        <h1>বাংলাদেশ সাধারণ জ্ঞান কুইজ</h1>
+        <div class="marks-info">মোট নম্বর: ১০ (প্রতিটি প্রশ্ন ১ নম্বর)</div>
+        
+        <form id="quizForm">
+            <div class="question-box">
+                <div class="marks">নম্বর: ১</div>
+                <div class="question-text">১. মহাস্থানগড় কোন জেলায় অবস্থিত?</div>
+                <div class="options">
+                    <button type="button" class="option-btn" data-question="1" data-answer="ক">(ক) নওগাঁ</button>
+                    <button type="button" class="option-btn" data-question="1" data-answer="খ">(খ) খুলনা</button>
+                    <button type="button" class="option-btn" data-question="1" data-answer="গ">(গ) বগুড়া</button>
+                    <button type="button" class="option-btn" data-question="1" data-answer="ঘ">(ঘ) নারায়ণগঞ্জ</button>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <div class="marks">নম্বর: ১</div>
+                <div class="question-text">২. ওয়ারী-বটেশ্বর কোন সভ্যতার অন্যতম কেন্দ্র ছিল?</div>
+                <div class="options">
+                    <button type="button" class="option-btn" data-question="2" data-answer="ক">(ক) খ্রিষ্টান</button>
+                    <button type="button" class="option-btn" data-question="2" data-answer="খ">(খ) বৌদ্ধ</button>
+                    <button type="button" class="option-btn" data-question="2" data-answer="গ">(গ) মুসলিম</button>
+                    <button type="button" class="option-btn" data-question="2" data-answer="ঘ">(ঘ) শিখ</button>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <div class="marks">নম্বর: ১</div>
+                <div class="question-text">৩. বাংলার শেষ স্বাধীন নবাব কে ছিলেন?</div>
+                <div class="options">
+                    <button type="button" class="option-btn" data-question="3" data-answer="ক">(ক) মুর্শিদকুলি খাঁ</button>
+                    <button type="button" class="option-btn" data-question="3" data-answer="খ">(খ) সরফরাজ খান</button>
+                    <button type="button" class="option-btn" data-question="3" data-answer="গ">(গ) সিরাজ-উদ-দৌলা</button>
+                    <button type="button" class="option-btn" data-question="3" data-answer="ঘ">(ঘ) আলীবর্দী খান</button>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <div class="marks">নম্বর: ১</div>
+                <div class="question-text">৪. ভারতীয় মুসলিম লীগ গঠিত হয়?</div>
+                <div class="options">
+                    <button type="button" class="option-btn" data-question="4" data-answer="ক">(ক) ১৯০৫ সালে</button>
+                    <button type="button" class="option-btn" data-question="4" data-answer="খ">(খ) ১৯০৬ সালে</button>
+                    <button type="button" class="option-btn" data-question="4" data-answer="গ">(গ) ১৯০৭ সালে</button>
+                    <button type="button" class="option-btn" data-question="4" data-answer="ঘ">(ঘ) ১৯০৮ সালে</button>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <div class="marks">নম্বর: ১</div>
+                <div class="question-text">৫. ১৯৭১ সালের কত তারিখে মুক্তিযুদ্ধ শুরু হয়?</div>
+                <div class="options">
+                    <button type="button" class="option-btn" data-question="5" data-answer="ক">(ক) ২৫শে মার্চ</button>
+                    <button type="button" class="option-btn" data-question="5" data-answer="খ">(খ) ২৬শে মার্চ</button>
+                    <button type="button" class="option-btn" data-question="5" data-answer="গ">(গ) ১০ই এপ্রিল</button>
+                    <button type="button" class="option-btn" data-question="5" data-answer="ঘ">(ঘ) ১৬ই এপ্রিল</button>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <div class="marks">নম্বর: ১</div>
+                <div class="question-text">৬. মুক্তিযুদ্ধে কত হাজার নিয়মিত যোদ্ধাদের নিয়ে গঠিত হয়?</div>
+                <div class="options">
+                    <button type="button" class="option-btn" data-question="6" data-answer="ক">(ক) বিশ হাজার</button>
+                    <button type="button" class="option-btn" data-question="6" data-answer="খ">(খ) ত্রিশ হাজার</button>
+                    <button type="button" class="option-btn" data-question="6" data-answer="গ">(গ) চল্লিশ হাজার</button>
+                    <button type="button" class="option-btn" data-question="6" data-answer="ঘ">(ঘ) পঞ্চাশ হাজার</button>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <div class="marks">নম্বর: ১</div>
+                <div class="question-text">৭. জনসংখ্যার শতকরা প্রায় কত ভাগ মানুষ কৃষিকাজের মাধ্যমে জীবিকা নির্বাহ করে?</div>
+                <div class="options">
+                    <button type="button" class="option-btn" data-question="7" data-answer="ক">(ক) ৫০ ভাগ</button>
+                    <button type="button" class="option-btn" data-question="7" data-answer="খ">(খ) ৬০ ভাগ</button>
+                    <button type="button" class="option-btn" data-question="7" data-answer="গ">(গ) ৭০ ভাগ</button>
+                    <button type="button" class="option-btn" data-question="7" data-answer="ঘ">(ঘ) ৮০ ভাগ</button>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <div class="marks">নম্বর: ১</div>
+                <div class="question-text">৮. সিলেটে প্রচুর পরিমাণে চা হয়। কারণ ভূমি-</div>
+                <div class="options">
+                    <button type="button" class="option-btn" data-question="8" data-answer="ক">(ক) নিচু বলে</button>
+                    <button type="button" class="option-btn" data-question="8" data-answer="খ">(খ) পাহাড়ি বলে</button>
+                    <button type="button" class="option-btn" data-question="8" data-answer="গ">(গ) সমতল বলে</button>
+                    <button type="button" class="option-btn" data-question="8" data-answer="ঘ">(ঘ) পাহাড়ি ঢালু বলে</button>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <div class="marks">নম্বর: ১</div>
+                <div class="question-text">৯. বাংলাদেশ কী ধরনের দেশ?</div>
+                <div class="options">
+                    <button type="button" class="option-btn" data-question="9" data-answer="ক">(ক) কৃষিপ্রধান</button>
+                    <button type="button" class="option-btn" data-question="9" data-answer="খ">(খ) শিল্পপ্রধান</button>
+                    <button type="button" class="option-btn" data-question="9" data-answer="গ">(গ) উন্নত</button>
+                    <button type="button" class="option-btn" data-question="9" data-answer="ঘ">(ঘ) অনুন্নত</button>
+                </div>
+            </div>
+
+            <div class="question-box">
+                <div class="marks">নম্বর: ১</div>
+                <div class="question-text">১০. সমাজের অগ্রগতিতে কোনটি অধিক গুরুত্বপূর্ণ?</div>
+                <div class="options">
+                    <button type="button" class="option-btn" data-question="10" data-answer="ক">(ক) শিক্ষা</button>
+                    <button type="button" class="option-btn" data-question="10" data-answer="খ">(খ) স্বাস্থ্য</button>
+                    <button type="button" class="option-btn" data-question="10" data-answer="গ">(গ) চিকিৎসা</button>
+                    <button type="button" class="option-btn" data-question="10" data-answer="ঘ">(ঘ) বাসস্থান</button>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">উত্তর জমা দিন</button>
+        </form>
+
+        <div id="result" class="result">
+            <h2>পরীক্ষার ফলাফল</h2>
+            <div class="score" id="score"></div>
+            <div class="answer-review" id="answerReview"></div>
+        </div>
+    </div>
+
+    <script>
+        const correctAnswers = {
+            1: "গ",
+            2: "খ",
+            3: "গ",
+            4: "খ",
+            5: "খ",
+            6: "খ",
+            7: "ঘ",
+            8: "ঘ",
+            9: "ক",
+            10: "ক"
+        };
+
+        const answerTexts = {
+            1: "(গ) বগুড়া",
+            2: "(খ) বৌদ্ধ",
+            3: "(গ) সিরাজ-উদ-দৌলা",
+            4: "(খ) ১৯০৬ সালে",
+            5: "(খ) ২৬শে মার্চ",
+            6: "(খ) ত্রিশ হাজার",
+            7: "(ঘ) ৮০ ভাগ",
+            8: "(ঘ) পাহাড়ি ঢালু বলে",
+            9: "(ক) কৃষিপ্রধান",
+            10: "(ক) শিক্ষা"
+        };
+
+        const userAnswers = {};
+
+        document.querySelectorAll('.option-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const question = this.dataset.question;
+                const answer = this.dataset.answer;
+                
+                document.querySelectorAll(`[data-question="${question}"]`).forEach(b => {
+                    b.classList.remove('selected');
+                });
+                
+                this.classList.add('selected');
+                userAnswers[question] = answer;
+            });
+        });
+
+        document.getElementById('quizForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (Object.keys(userAnswers).length < 10) {
+                alert('সব প্রশ্নের উত্তর দিন!');
+                return;
+            }
+
+            let score = 0;
+            let reviewHtml = '';
+
+            for (let i = 1; i <= 10; i++) {
+                const isCorrect = userAnswers[i] === correctAnswers[i];
+                if (isCorrect) score += 1;
+
+                const className = isCorrect ? 'correct-answer' : 'wrong-answer';
+                const status = isCorrect ? '✓ সঠিক' : '✗ ভুল';
+
+                reviewHtml += `
+                    <div class="review-item ${className}">
+                        <strong>প্রশ্ন ${i}:</strong> ${status}<br>
+                        সঠিক উত্তর: ${answerTexts[i]}
+                    </div>
+                `;
+            }
+
+            document.getElementById('score').textContent = `${score}/১০`;
+            document.getElementById('answerReview').innerHTML = reviewHtml;
+            document.getElementById('quizForm').style.display = 'none';
+            document.getElementById('result').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
